@@ -11,8 +11,6 @@ services:
   dockerfilePath: ./Dockerfile
   dockerContext: .
   dockerCommand: npm run start
-  domains:
-    - showhouse.app
   envVars:
     - fromGroup: dev-env
 
