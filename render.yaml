@@ -1,0 +1,37 @@
+previewsEnabled: true
+previewsExpireAfterDays: 1
+
+services:
+- type: web
+  name: showhouse-api
+  env: docker
+  region: singapore
+  branch: main
+  plan: free
+  dockerfilePath: ./Dockerfile
+  dockerContext: .
+  dockerCommand: npm run start
+  domains:
+    - showhouse.app
+  envVars:
+    - fromGroup: dev-env
+
+envVarGroups:
+- name: dev-env
+  envVars:
+    - key: POSTGRES_HOST
+      value: dpg-ceprpgh4reb2fghuis1g-a
+    - key: POSTGRES_PORT
+      value: 5432
+    - key: POSTGRES_USER
+      value: admin
+    - key: POSTGRES_PASSWORD
+      value: rcJVVXvvTgnTtPxWqEaPdpwBUaqoqXk3
+    - key: POSTGRES_DB
+      value: showhouse_spatial
+    - key: URA_API_KEY
+      value: d5fe5a60-8ce4-4382-a6ab-f795e1ca365a
+    - key: REACT_APP_MAPBOX_API_KEY
+      value: pk.eyJ1IjoiaGFuLWFlY3RlY2giLCJhIjoiY2tyYnprbmhnNHh4bDJwcnV2MzY3d3Y0diJ9.WEyhmxtWMvHb3K_gSR17fA
+    - key: REACT_APP_BACKEND_URL
+      value: /api
