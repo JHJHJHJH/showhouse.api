@@ -4,10 +4,15 @@ import Session from 'supertokens-node/recipe/session';
 import ThirdParty from 'supertokens-node/recipe/thirdparty';
 
 import { ConfigInjectionToken, AuthModuleConfig } from '../config.interface';
+import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class SupertokensService {
-  constructor(@Inject(ConfigInjectionToken) private config: AuthModuleConfig) {
+  constructor(
+    @Inject(ConfigInjectionToken)
+    private config: AuthModuleConfig,
+    private configService: ConfigService,
+  ) {
     supertokens.init({
       appInfo: config.appInfo,
       supertokens: {
@@ -21,9 +26,8 @@ export class SupertokensService {
               // We have provided you with development keys which you can use for testing.
               // IMPORTANT: Please replace them with your own OAuth keys for production use.
               ThirdParty.Google({
-                clientId:
-                  '384576416513-1dhfg6rj33d2l16ge13cbfc2jhn6uu57.apps.googleusercontent.com',
-                clientSecret: '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',
+                clientId: configService.get('GOOGLE_CLIENT_ID'),
+                clientSecret: configService.get('GOOGLE_CLIENT_SECRET'),
               }),
               // ThirdParty.Github({
               //   clientId: '467101b197249757c71f',
@@ -45,7 +49,9 @@ export class SupertokensService {
             ],
           },
         }),
-        Session.init(),
+        Session.init({
+          exposeAccessTokenToFrontendInCookieBasedAuth: true,
+        }),
       ],
     });
   }
