@@ -36,7 +36,7 @@ envVarGroups:
     - key: SHOWHOUSE_URL_PROD
       value: https://showhouse.app
     - key: SHOWHOUSE_API_URL_PROD
-      value: https://showhouse.app/api
+      value: https://showhouse-api.onrender.com/api
     - key: SUPERTOKENS_URI_PROD
       value: https://prod-8caa3421053e11ee87a2394217c4b227-ap-southeast-1.aws.supertokens.io:3567
     - key: SUPERTOKENS_API_KEY_PROD
