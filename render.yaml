@@ -34,9 +34,9 @@ envVarGroups:
     - key: REACT_APP_BACKEND_URL
       value: /api
     - key: SHOWHOUSE_URL_PROD
-      value: https://showhouse.app
+      value: https://www.showhouse.app/
     - key: SHOWHOUSE_API_URL_PROD
-      value: https://showhouse.app/api
+      value: https://www.showhouse.app/api
     - key: SUPERTOKENS_URI_PROD
       value: https://prod-8caa3421053e11ee87a2394217c4b227-ap-southeast-1.aws.supertokens.io:3567
     - key: SUPERTOKENS_API_KEY_PROD
