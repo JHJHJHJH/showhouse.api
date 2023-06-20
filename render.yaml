@@ -41,6 +41,10 @@ envVarGroups:
       value: https://prod-8caa3421053e11ee87a2394217c4b227-ap-southeast-1.aws.supertokens.io:3567
     - key: SUPERTOKENS_API_KEY_PROD
       value: rbJ0XSmonIH4QCq3cthB2=2o2D1gpR
+    - key: SUPERTOKENS_URI_DEV
+      value: https://dev-2f61bc9101ef11ee8b9f3fc3a7d3670f-ap-southeast-1.aws.supertokens.io:3568
+    - key: SUPERTOKENS_API_KEY_DEV
+      value: 3Uu-D24pSjgaebK0AtE0Jfr1xoIDOu
     - key: GOOGLE_CLIENT_ID
       value: 384576416513-1dhfg6rj33d2l16ge13cbfc2jhn6uu57.apps.googleusercontent.com
     - key: GOOGLE_CLIENT_SECRET
