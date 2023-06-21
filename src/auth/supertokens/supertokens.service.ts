@@ -51,21 +51,19 @@ export class SupertokensService {
                     // This is the response from the OAuth 2 provider that contains their tokens or user info.
                     const thirdPartyAuthCodeResponse =
                       response.authCodeResponse;
-                    // console.log(
-                    //   '🚀 ~ file: supertokens.service.ts:51 ~ SupertokensService ~ thirdPartyAuthCodeResponse:',
-                    //   thirdPartyAuthCodeResponse,
-                    // );
+
                     // console.log(response);
                     if (response.createdNewUser) {
-                      // TODO: Post sign up logic
+                      // POST SIGN-UP LOGIC
                       roleService.addRoleToUser(id, 'free');
                     } else {
-                      const roles = await roleService.getRolesForUser(id);
-                      // If user does not contain role
-                      // add default 'free' role
-                      if (roles.length == 0) {
-                        roleService.addRoleToUser(id, 'free');
-                      }
+                      // POST SIGN-IN LOGIC
+                      // const roles = await roleService.getRolesForUser(id);
+                      // // If user does not contain role
+                      // // add default 'free' role
+                      // if (roles.length == 0) {
+                      //   roleService.addRoleToUser(id, 'free');
+                      // }
                     }
                   }
                   return response;
